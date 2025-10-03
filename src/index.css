@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-default: #ffffff; /* or your preferred color */
+  --color-subtle: #666666;
+  --color-muted: #999999;
+  --color-darker: #333333;
+  --color-state-soft: #f0f0f0;
+  --color-state-soft-hover: #e0e0e0;
+  --color-state-soft-press: #d0d0d0;
+  --color-border-default: #e5e7eb;
+  --color-input: #f9fafb;
+  --color-input-disabled: #f3f4f6;
+  --color-placeholder-default: #9ca3af;
+  --color-destructive: #ef4444;
+  --color-primary: #29166f;
+  --color-secondary: #9f1d0c;
+}
+
+@theme {
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+@layer base {
+  /* Set as base font family, e.g. for body */
+  body {
+    font-family: var(--font-poppins);
+  }
+}
+
+/* Custom scrollbar for desktop */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.devarsh{
+  background-color: #666666;
+}
+
+@layer utilities {
+  .bg-default {
+    background-color: var(--color-default);
+  }
+  .text-subtle {
+    color: var(--color-subtle);
+  }
+  .text-muted {
+    color: var(--color-muted);
+  }
+  .border-darker {
+    border-color: var(--color-darker);
+  }
+  .ring-border-default {
+    --tw-ring-color: var(--color-border-default);
+  }
+  .bg-input {
+    background-color: var(--color-input);
+  }
+  .placeholder-placeholder-default::placeholder {
+    color: var(--color-placeholder-default);
+  }
+  .bg-state-soft {
+    background-color: var(--color-state-soft);
+  }
+  .bg-state-soft-hover:hover {
+    background-color: var(--color-state-soft-hover);
+  }
+  .bg-state-soft-press:active {
+    background-color: var(--color-state-soft-press);
+  }
+  .has-aria-invalid:border-destructive:has([aria-invalid="true"]) {
+    border-color: var(--color-destructive);
+  }
+}
