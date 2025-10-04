@@ -11,7 +11,7 @@ import Analytics from '../pages/Analytics';
 const Routing = () => {
   return (
     <Routes>
-      <Route path="/Hotel_Dashboard/Admin/" element={<Home />} />
+      <Route path="/Hotel_Dashboard/" element={<Home />} />
       <Route path="/Hotel_Dashboard/Admin/login" element={<Login />} />
 
       {/* Admin routes wrapped in AdminLayout */}
