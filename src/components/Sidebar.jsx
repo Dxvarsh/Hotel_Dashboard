@@ -32,6 +32,7 @@ const Sidebar = ({ toggleSidebar }) => {
                             `flex items-center space-x-3 px-3 py-2 text-sm font-medium rounded-md ${isActive ? 'bg-primary text-white' : 'hover:bg-primary/10'
                             }`
                         }
+                        onClick={toggleSidebar}
                     >
                         <div className="h-full text-lg">{item.icon}</div>
                         <h3 className="text-md">{item.label}</h3>
