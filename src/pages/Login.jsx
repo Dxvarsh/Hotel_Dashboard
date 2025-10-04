@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../assets/Logo_RCT.png';
+import Logo from '../assets/Logo.jpg';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 const Login = () => {
@@ -25,19 +25,24 @@ const Login = () => {
         width="100%"
         height="100%"
         className="absolute left-0 top-0 z-0"
-        style={{ background: "linear-gradient(to bottom, #29166f, #8e2de2)" }}
+        style={{ background: "linear-gradient(to bottom, #D5972C, #3A2E1D)" }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <pattern id="fourPointStar" width="40" height="40" patternUnits="userSpaceOnUse">
-            <polygon
-              points="20,5 24,16 35,20 24,24 20,35 16,24 5,20 16,16"
-              fill="white"
-              fillOpacity="0.1"
-            />
+          <pattern
+            id="luxuryPattern"
+            width="50"
+            height="50"
+            patternUnits="userSpaceOnUse"
+          >
+            { /* <!-- Diamond shape (symbolizing luxury) --> */}
+            <rect x="20" y="10" width="4" height="4" fill="white" fillOpacity="0.1" transform="rotate(45 22 12)" />
+            <rect x="10" y="20" width="4" height="4" fill="white" fillOpacity="0.1" transform="rotate(45 12 22)" />
+            <rect x="30" y="20" width="4" height="4" fill="white" fillOpacity="0.1" transform="rotate(45 32 22)" />
+            <rect x="20" y="30" width="4" height="4" fill="white" fillOpacity="0.1" transform="rotate(45 22 32)" />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill="url(#fourPointStar)" />
+        <rect width="100%" height="100%" fill="url(#luxuryPattern)" />
       </svg>
 
       {/* Login Container */}
@@ -46,18 +51,15 @@ const Login = () => {
           <div className="w-full bg-default p-8 sm:rounded-[20px] sm:shadow-md flex flex-col justify-center h-full sm:h-auto">
             <div className="flex flex-col pt-6 items-center gap-6">
               {/* Logo */}
-              <img src={Logo} alt="Logo" />
+              <img src={Logo} alt="Logo" className='h-30 w-30' />
 
               {/* Login Form */}
               <div className="flex flex-col items-center gap-6 w-full">
                 <p className="text-subtle text-sm">Login or signup below</p>
                 <form onSubmit={handleSubmit} className="w-full">
 
-                  <label className="transition-colors [p,div]:whitespace-pre-line text-sm leading-[1.25rem] font-medium mb-2 flex items-center" htmlFor="email">
+                  <label className="transition-colors [p,div]:whitespace-pre-line text-sm leading-[1.25rem] font-medium mb-1 flex items-center" htmlFor="email">
                     Email
-                    <span className="ms-auto text-sm text-muted font-normal">
-                      <a href="#">Forgot password?</a>
-                    </span>
                   </label>
                   <div>
                     <input
@@ -73,10 +75,13 @@ const Login = () => {
                     />
                   </div>
 
-                  <label className="transition-colors [p,div]:whitespace-pre-line text-sm leading-[1.25rem] font-medium mb-2 flex items-center" htmlFor="password">
+                  <label className="mt-4 transition-colors [p,div]:whitespace-pre-line text-sm leading-[1.25rem] font-medium mb-1 flex items-center" htmlFor="password">
                     Password
+                    <span className="ms-auto text-sm text-muted font-normal">
+                      <a href="#">Forgot password?</a>
+                    </span>
                   </label>
-                  <div className="relative mt-3">
+                  <div className="relative">
                     <input
                       id="password"
                       aria-invalid="false"
@@ -100,9 +105,9 @@ const Login = () => {
                     <button
                       aria-busy="false"
                       type="submit"
-                      className="flex items-center justify-center text-center font-medium cursor-pointer outline-hidden focus-visible:ring-3 relative whitespace-nowrap transition-colors focus-visible:ring-default focus-visible:ring-offset-1 aria-disabled:text-hint aria-disabled:cursor-not-allowed aria-busy:cursor-wait aria-busy:text-transparent text-subtle bg-state-soft hover:bg-state-soft-hover active:bg-state-soft-press aria-disabled:bg-state-disabled h-10 gap-2 px-3.5 text-sm rounded-md w-full mt-2"
+                      className="flex items-center justify-center text-center font-medium cursor-pointer outline-hidden focus-visible:ring-3 relative whitespace-nowrap transition-colors focus-visible:ring-default focus-visible:ring-offset-1 aria-disabled:text-hint aria-disabled:cursor-not-allowed aria-busy:cursor-wait aria-busy:text-transparent text-white bg-primary hover:bg-primary/80 active:bg-primary/60 aria-disabled:bg-state-disabled h-10 gap-2 px-3.5 text-sm rounded-md w-full mt-2"
                     >
-                      Unlock Class System 🔐
+                      Log In
                     </button>
                   </div>
                   <button type="submit" className="hidden"></button>

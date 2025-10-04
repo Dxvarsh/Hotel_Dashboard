@@ -13,7 +13,7 @@ const TopBar = ({ toggleSidebar }) => {
         >
           <FiMenu className="text-xl" />
         </button>
-        <h1 className='text-xl font-semibold'>Admin Panel</h1>
+        <h1 className='text-xl font-semibold'>Hotel Khateshwar</h1>
       </div>
 
       {/* Right: Notifications + User Profile */}
